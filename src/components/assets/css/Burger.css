@@ -1,0 +1,71 @@
+/* Плавный выезд и появление Offcanvas */
+.custom-offcanvas .offcanvas {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    /* градиентный фон */
+    color: white;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Когда Offcanvas активен — возвращаем на экран */
+.custom-offcanvas .offcanvas.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Заголовок */
+.custom-offcanvas .offcanvas-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Заголовок текста */
+.custom-offcanvas .offcanvas-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Основной текст */
+.custom-offcanvas .offcanvas-body {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background: white;
+    border: none;
+    outline: none;
+}
+
+.btn:hover {
+    color: var(--bs-btn-hover-color);
+    background-color: white !important;
+    border-color: none;
+}
+
+.ffhgf {
+    width: 200px;
+    text-align: start;
+    margin-top: 15px;
+}
+
+.ffh {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 25px;
+}
+
+.sdgiu {
+    color: black;
+    position: relative;
+    top: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+    .header-social-links {
+        display: block;
+    }
+}
