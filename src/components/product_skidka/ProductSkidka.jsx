@@ -34,7 +34,7 @@ const SolarPanelList = () => {
 
     const fetchPowers = async () => {
         try {
-            const res = await axios.get("http://127.0.0.1:8000/api/shop_category/power/");
+            const res = await axios.get("http://127.0.0.1:8000/api/skidka_product/power/");
             setPowers(res.data);
         } catch (error) {
             console.error("Ошибка при загрузке мощностей:", error);
@@ -108,7 +108,7 @@ const SolarPanelList = () => {
     );
 };
 
-function Project() {
+function SkidkaProduct() {
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -162,7 +162,7 @@ function Project() {
 
             const query = new URLSearchParams(queryObj).toString();
 
-            const res = await axios.get(`http://127.0.0.1:8000/api/shop_category/products/?${query}`);
+            const res = await axios.get(`http://127.0.0.1:8000/api/product_skidka/products/?${query}`);
             setProducts(res.data);
         } catch (err) {
             console.error('Ошибка загрузки товаров:', err);
@@ -237,98 +237,9 @@ function Project() {
 
     return (
         <div>
-            <ToastContainer />
-            <div className="page-header parallaxie">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <div className="page-header-box">
-                                <br /><br />
-                                <h1 className="text-anime">Наши Товары</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <Nav />
+            <h1 style={{ textAlign: 'center', marginTop: '35px' }}>Cкидка товоров</h1>
             <div className="containeraa">
-                <aside className="sidebar">
-                    <div className="filter-group">
-                        <h3>Цена (сўм)</h3>
-                        <Slider
-                            range
-                            min={0}
-                            max={7000000}
-                            value={[rangeMin, rangeMax]}
-                            step={50000}
-                            onChange={(value) => {
-                                setRangeMin(value[0]);
-                                setRangeMax(value[1]);
-                            }}
-                            trackStyle={[{ backgroundColor: '#28a745', height: 6 }]}
-                            handleStyle={[
-                                { borderColor: '#28a745', height: 20, width: 20, marginTop: -7 },
-                                { borderColor: '#28a745', height: 20, width: 20, marginTop: -7 }
-                            ]}
-                            railStyle={{ height: 6 }}
-                        />
-                        <div
-                            style={{
-                                display: 'flex',
-                                justifyContent: 'space-between',
-                                marginTop: 10,
-                                fontWeight: 'bold',
-                                fontSize: 16,
-                                color: '#333'
-                            }}
-                        >
-                            <span>{rangeMin.toLocaleString()} сўм</span>
-                            <span>{rangeMax.toLocaleString()} сўм</span>
-                        </div>
-                    </div>
-                    <SolarPanelList selectedPower={selectedPower} onPowerChange={handlePowerChange} />
-                    <div className="filter-group">
-                        <h3>Тип</h3>
-                        <ProductTypeFilter />
-                    </div>
-                    <div className="filter-group">
-                        <h3>Скидка товара</h3>
-                        <Skidka />
-                    </div>
-                    <div className="filter-group">
-                        <h3>Бренд</h3>
-                        <Brand selectedBrands={selectedBrands} onBrandChange={handleBrandChange} />
-                        <br />
-                        <label htmlFor="rating" className="mr-2">Мин. рейтинг:</label>
-                        <input
-                            name="rating"
-                            type="number"
-                            placeholder="5-10"
-                            className="form-control mb-2"
-                            onChange={handleFilterChange}
-                        />
-                        <br />
-                    </div>
-                </aside>
-
                 <main className="main-content">
-                    <div className="sort-options mb-3">
-                        <button onClick={() => handleSortClick('price')}>Cкидка товоров</button>
-                        <button onClick={() => handleSortClick('rating')}>Новинки</button>
-                        <button onClick={() => handleSortClick('popularity')}>  
-                            <strong>Оммабоплиги бўйича</strong>
-                        </button>
-
-                        <div className='iuuis'>
-                            <input
-                                name="search"
-                                placeholder="Поиск товара"
-                                className="form-controfl mb-2"
-                                onChange={handleFilterChange}
-                            />
-                            <img src={search} alt="search" className='iccc' />
-                        </div>
-                    </div>
 
                     <div className="product-grid">
                         {products.length === 0 && <p>Товары не найдены.</p>}
@@ -339,10 +250,11 @@ function Project() {
                                         <img src={p.image} alt={p.name} className="img-fluid w-100" />
                                     </a>
                                 </div>
-                                <div className="product-name">{p.name}</div>
-                                <div className="product-name">Бранд: {p.slug}</div>
+                                <div className="product-name">Модель: {p.slug}</div>
+                                <div className="product-name">Бранд: {p.name}</div>
                                 <div className="product-name">МОЩНОСТЬ: {p.power} w</div>
-                                <div className="product-desc">{p.description}</div>
+                                <div className="product-name">Скидка: <span style={{color: 'red'}}>{p.tag}</span> </div>
+                                <div className="product-desc">Описание: {p.description}</div>
                                 <div className="product-price">
                                     Цена: {p.price} сўм<br />
                                 </div>
@@ -361,4 +273,4 @@ function Project() {
     );
 }
 
-export default Project;
+export default SkidkaProduct;

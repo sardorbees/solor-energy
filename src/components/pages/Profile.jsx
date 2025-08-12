@@ -173,6 +173,7 @@ export default function Profile() {
                 <li class="breadcrumb-item active" aria-current="page" style={{ color: 'var(--text-color)' }}>{profile.first_name}</li>
                 <li class="breadcrumb-item active" aria-current="page" style={{ color: 'var(--text-color)' }}><a style={{ color: 'var(--text-color)' }}>Для заказов</a></li>
                 <li class="breadcrumb-item active" aria-current="page" style={{ color: 'var(--text-color)' }}><a style={{ color: 'var(--text-color)' }}>Все Заказы</a></li>
+                <li class="breadcrumb-item active" aria-current="page" style={{ color: 'var(--text-color)' }}><a href="/comment" style={{ color: 'var(--text-color)' }}>Написать комментария</a></li>
               </ol>
             </nav>
             <div class="row gutters-sm">

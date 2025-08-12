@@ -90,6 +90,8 @@
  }
 
  .sort-options button {
+     height: 56px;
+     width: 180px;
      padding: 8px 14px;
      border: 1px solid #ccc;
      border-radius: 20px;

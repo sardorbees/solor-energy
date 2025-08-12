@@ -40,6 +40,8 @@ import Growat from './components/growat/Growat';
 import Gybrid from './components/gybrid/Gybrid'
 import HzSolar from './components/hz-solar/HzSolar';
 import Invt from './components/invt/Invt';
+import Videoss from './components/video_ss/Videoss'
+import Comment from './components/comment/Comment';
 
 function App() {
   return (
@@ -47,7 +49,6 @@ function App() {
       <BrowserRouter>
         <Topbar />
         <Header />
-        <Navbar />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/about" element={<About />} />
@@ -58,6 +59,8 @@ function App() {
           <Route path="/category/:slug" element={<Nav />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/video-type" element={<Videoss />} />
+          <Route path="/comment" element={<Comment />} />
           <Route
             path="/profile"
             element={

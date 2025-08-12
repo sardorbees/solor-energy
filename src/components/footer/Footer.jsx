@@ -102,11 +102,12 @@ function Footer() {
                                         <div class="footer-links">
                                             <h2>Быстрые ссылки</h2>
                                             <ul>
-                                                <li><a href="#">Основный</a></li>
-                                                <li><a href="./about">О нас</a></li>
-                                                <li><a href="./projects">Католог</a></li>
+                                                <li><a href="/about">О комнании</a></li>
+                                                <li><a href="./catalog">Наш Католог</a></li>
                                                 <li><a href="./services">Наш Услуги</a></li>
-                                                <li><a href="./contact">Контакт</a></li>
+                                                <li><a href="./contact">Связь с Нами</a></li>
+                                                <li><a href="./video-type">Наш Видео</a></li>
+                                                <li><a href="./comment">Комментария</a></li>
                                             </ul>
                                         </div>
                                     </div>

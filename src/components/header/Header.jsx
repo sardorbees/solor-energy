@@ -25,12 +25,12 @@ function Header() {
 
                             <div class="collapse navbar-collapse main-menu">
                                 <ul class="navbar-nav mr-auto" id="menu">
-                                    <li class="nav-item"><a class="nav-link" href="/">Основный</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/about">О нас</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/services">Услуги</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/contact">Контакт</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/catalog">Католог</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/allcategory">Все категории</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/about">О комнании</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/catalog">Наш Католог</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/services">Наш Услуги</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/video-type">Наш Видео</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/contact">Связь с нами</a></li>
+                                    {/* <li class="nav-item"><a class="nav-link" href="/allcategory">Все категории</a></li> */}
                                 </ul>
                             </div>
                             <li class="nav-iteme"><a class="nav-link"><Navbar /></a></li>

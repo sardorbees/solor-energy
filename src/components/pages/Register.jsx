@@ -49,7 +49,7 @@ export default function Register() {
         <input
           name="first_name"
           type="name"
-          placeholder="Имя"
+          placeholder="Username"
           onChange={handleChange}
           required
         />

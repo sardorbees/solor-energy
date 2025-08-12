@@ -56,6 +56,7 @@
     display: flex;
     flex-wrap: wrap;
     column-gap: 25px;
+    flex-direction: column;
 }
 
 .sdgiu {
@@ -67,5 +68,66 @@
 @media only screen and (max-width: 767px) {
     .header-social-links {
         display: block;
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    header.main-header {
+        margin-bottom: 25px;
+    }
+}
+
+@media only screen and (min-width: 342px) and (max-width: 437px) {
+    .section-title h3 {
+        display: inline-block;
+        text-align: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: var(--accent-color);
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 10px;
+        z-index: 2;
+        padding-top: 25px;
+    }
+
+    .header-social-links {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .header-buttonn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7px 15px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 1px solid var(--accent-color);
+        width: 200px;
+        white-space: nowrap;
+        font-size: 14px;
+        column-gap: 15px;
+        position: relative;
+        top: 15px;
+    }
+
+    header.main-header {
+        margin-bottom: 25px;
     }
 }

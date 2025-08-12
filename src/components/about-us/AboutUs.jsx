@@ -33,7 +33,7 @@ function AboutUs() {
 
                         <div class="col-lg-6">
                             <div class="section-title">
-                                <h3 class="wow fadeInUp">О нас</h3>
+                                <h3 class="wow fadeInUp">О комнании</h3>
                                 <h2 class="text-anime">О зеленой энергии солнечной энергии</h2>
                             </div>
                             <div class="about-content wow fadeInUp" data-wow-delay="0.25s">

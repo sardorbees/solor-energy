@@ -6,11 +6,13 @@ import '../assets/css/all.min.css'
 import '../assets/css/animate.css'
 import '../assets/css/bootstrap.min.css'
 import '../assets/css/custom.css'
+import '../assets/css/Burger.css'
 import '../assets/css/magnific-popup.css'
 import '../assets/css/slicknav.min.css'
 import '../assets/css/swiper-bundle.min.css'
 import call from '../assets/img/icon/call.png'
 import Navbar from '../nabvar/Navbar';
+import data from '../assets/img/icon/data.png'
 
 import telegram from '../assets/img/icon/telegram.png'
 import instagram from '../assets/img/icon/instagram.png'
@@ -43,13 +45,14 @@ function Topbar() {
                         </div>
                         <div class="col-md-4">
                             <div class="header-social-links">
-                                <ul>
-                                    <li>
-                                        <a href="https://t.me/Enerjiprojectadmin"><img src={telegram} alt="" /></a>
-                                    </li>
-                                    <li><a href="https://www.instagram.com/solarenerjiproject?igsh=bmozcmUxNGMyMHRp"><img
-                                        src={instagram} alt="" /></a></li>
-                                </ul>
+                                <a href="tel:+998951481212" className='header-button call-button'>
+                                    <img src={call} alt="" width={20} />
+                                    <span class="button-text">ПOЗВОНИТЬ</span>
+                                </a>
+                                <a href="https://t.me/Enerjiprojectadmin" className='header-buttonn order-button'>
+                                    <img src={data} alt="" width={20} />
+                                    <span class="button-text">ОФОРМИТЬ ЗАЯВКУ</span>
+                                </a>
                             </div>
                         </div>
                     </div>

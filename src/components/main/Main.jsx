@@ -2,17 +2,23 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Video from '../video/Video';
-import AboutUs from '../about-us/AboutUs'
-import ServicesLayout from '../services-layout/ServicesLayout';
 import WhyChooseusLayout from '../why-chooseus-layout/WhyChooseusLayout';
 import OurProcessLlayout from '../our-process-layout/OurProcessLlayout';
+import FloatingButtons from '../floatingbuttons/FloatingButtons';
+import ProductSkidka from '../product_skidka/ProductSkidka'
+import NewProduct from '../new_product/NewProduct'
+import AllCategory from '../allcategory/AllCategory'
+import OurProject from '../our_project/OurProject'
 
 function Main() {
     return (
         <div>
             <Video />
-            <AboutUs />
-            <ServicesLayout />
+            <ProductSkidka />
+            <NewProduct />
+            <FloatingButtons />
+            <AllCategory />
+            <OurProject />
             < WhyChooseusLayout />
             <OurProcessLlayout />
             <div class="footer-ticker">

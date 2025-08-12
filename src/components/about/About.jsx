@@ -23,7 +23,7 @@ function About() {
                         <div class="col-md-12">
                             <div class="page-header-box">
                                 <br /><br /><br />
-                                <h1 class="text-anime">О нас</h1>
+                                <h1 class="text-anime">О комнании</h1>
                             </div>
                         </div>
                     </div>

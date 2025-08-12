@@ -10,41 +10,30 @@ import '../assets/css/slicknav.min.css';
 import '../assets/css/swiper-bundle.min.css';
 
 function Services() {
-    const [services, setServices] = useState([]);
+    const [services, setItems] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Функция загрузки данных
-        const fetchServices = () => {
-            axios.get('http://127.0.0.1:8000/api/services_title/cards/')
-                .then(res => {
-                    setServices(res.data);
-                })
-                .catch(err => {
-                    console.error('Ошибка при загрузке данных:', err);
-                });
-        };
-
-        fetchServices(); // первая загрузка
-        const interval = setInterval(fetchServices, 1000); // обновление каждую секунду
-
-        return () => clearInterval(interval); // очистка
+        fetchItems();
+        const intervalId = setInterval(fetchItems, 1000);
+        return () => clearInterval(intervalId);
     }, []);
+
+    const fetchItems = async () => {
+        try {
+            setLoading(true);
+            const resp = await axios.get('http://127.0.0.1:8000/api/our_project/cards/');
+            setItems(resp.data);
+        } catch (err) {
+            console.error('Ошибка загрузки', err);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <div>
-            <div className="page-header parallaxie">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <div className="page-header-box">
-                                <br /><br /><br />
-                                <h1 className="text-anime">Наши Услуги</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <h1 style={{ textAlign: 'center', marginTop: '35px' }}>Нашы проекты</h1>
             <div className="page-services">
                 <div className="container">
                     <div className="row">

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import WhyChooseUs from '../why-choose-us/WhyChooseUs';
 import '../assets/css/all.min.css';
 import '../assets/css/animate.css';
 import '../assets/css/bootstrap.min.css';
@@ -9,26 +8,26 @@ import '../assets/css/magnific-popup.css';
 import '../assets/css/slicknav.min.css';
 import '../assets/css/swiper-bundle.min.css';
 
-function Services() {
-    const [services, setServices] = useState([]);
+function Videoss() {
+    const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Функция загрузки данных
-        const fetchServices = () => {
-            axios.get('http://127.0.0.1:8000/api/services_title/cards/')
-                .then(res => {
-                    setServices(res.data);
-                })
-                .catch(err => {
-                    console.error('Ошибка при загрузке данных:', err);
-                });
-        };
-
-        fetchServices(); // первая загрузка
-        const interval = setInterval(fetchServices, 1000); // обновление каждую секунду
-
-        return () => clearInterval(interval); // очистка
+        fetchItems();
+        // ❌ убрал setInterval — чтобы не перезапускалось каждую секунду
     }, []);
+
+    const fetchItems = async () => {
+        try {
+            setLoading(true);
+            const resp = await axios.get('http://127.0.0.1:8000/api/media_app/api/media-items/');
+            setItems(resp.data);
+        } catch (err) {
+            console.error('Ошибка загрузки', err);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <div>
@@ -38,7 +37,7 @@ function Services() {
                         <div className="col-md-12">
                             <div className="page-header-box">
                                 <br /><br /><br />
-                                <h1 className="text-anime">Наши Услуги</h1>
+                                <h1 className="text-anime">Наше Видео</h1>
                             </div>
                         </div>
                     </div>
@@ -48,30 +47,40 @@ function Services() {
             <div className="page-services">
                 <div className="container">
                     <div className="row">
-                        {services.map((service) => (
-                            <div key={service.id} className="col-lg-4 col-md-6">
-                                <div className="service-item wow fadeInUp" data-wow-delay="0.25s">
-                                    <a href="#" className="service-box-link"></a>
-
-                                    <div className="service-image">
-                                        <img src={service.icon} alt={service.title} />
-                                        <div className="service-icon">
-                                            <img src={service.img} alt={service.title} />
+                        {loading && <p>Загрузка...</p>}
+                        {!loading && items.length === 0 && <p>Нет данных</p>}
+                        {items.map((item, index) => (
+                            <div key={item.id || index} className="col-lg-4 col-md-6">
+                                <div className="service-item wow fadeInUp" data-wow-delay={`${0.25 * (index % 3)}s`}>
+                                    {item.video_url ? (
+                                        <video
+                                            src={item.video_url}
+                                            controls
+                                            style={{ width: '100%', height: '250px', objectFit: 'cover' }}
+                                        />
+                                    ) : item.image_url ? (
+                                        <img
+                                            src={item.image_url}
+                                            alt={item.title}
+                                            style={{ width: '100%', height: '250px', objectFit: 'cover' }}
+                                        />
+                                    ) : (
+                                        <div style={{
+                                            height: '250px',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            color: '#fff'
+                                        }}>
+                                            Нет медиа
                                         </div>
-                                    </div>
-
-                                    <div className="service-content">
-                                        <h3>{service.title}</h3>
-                                        <p>{service.desc}</p>
-                                    </div>
+                                    )}
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
             </div>
-
-            <WhyChooseUs />
 
             <div className="footer-ticker">
                 <div className="scrolling-ticker">
@@ -97,4 +106,4 @@ function Services() {
     );
 }
 
-export default Services;
+export default Videoss;

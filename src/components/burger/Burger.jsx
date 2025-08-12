@@ -34,33 +34,19 @@ function Burger() {
                 <Offcanvas.Body>
                     <ul class="navbar-nav mr-auto" id="menu">
                         <hr />
-                        <li class="nav-item"><a class="nav-link" href="/">Основный</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about">О комнании</a></li>
                         <hr />
-                        <li class="nav-item"><a class='nav-link' href='/about'>О нас</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/catalog">Наш Католог</a></li>
                         <hr />
-                        <li class="nav-item"><a class='nav-link' href='/services'>Услуги</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/services">Наш Услуги</a></li>
                         <hr />
-                        <li class="nav-item"><a class='nav-link' href='/contact'>Контакт</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contact">Связь с Нами</a></li>
                         <hr />
-                        <li class="nav-item highlighted-menu"><a class="nav-link"
-                            href="https://t.me/Enerjiprojectadmin">Забронировать сейчас</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="/contact">Наш Видео</a></li>
+                        <hr />
+                        <li class="nav-item"><a class="nav-link" href="/comment">Комментария</a></li>
                         <hr />
                     </ul>
-                    <div className="ffh">
-                        <a href="/catalog" className='sdgiu'>Католог</a>
-                        <a href="/allcategory" className='sdgiu'>Все категории</a>
-                    </div>
-                    <div class="header-social-links">
-                        <ul>
-                            <li>
-                                <a href="https://t.me/Enerjiprojectadmin"><img src={telegram} alt="" /></a>
-                            </li>
-                            <li><a href="https://www.instagram.com/solarenerjiproject?igsh=bmozcmUxNGMyMHRp"><img
-                                src={instagram} alt="" /></a></li>
-                        </ul>
-                    </div>
-                    <hr />
                 </Offcanvas.Body>
             </Offcanvas>
         </>

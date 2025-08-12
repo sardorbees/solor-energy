@@ -1,53 +1,57 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import logo from '../assets/img/logo/12.png'
-import '../assets/css/all.min.css'
-import '../assets/css/animate.css'
-import '../assets/css/bootstrap.min.css'
-import '../assets/css/custom.css'
-import '../assets/css/magnific-popup.css'
-import '../assets/css/slicknav.min.css'
-import '../assets/css/swiper-bundle.min.css'
-import video from '../assets/img/video/video.mp4'
+import React from 'react';
+import video from '../assets/img/video/video.mp4';
+import '../assets/css/all.min.css';
+import '../assets/css/animate.css';
+import '../assets/css/bootstrap.min.css';
+import '../assets/css/custom.css';
+import '../assets/css/magnific-popup.css';
+import '../assets/css/slicknav.min.css';
+import '../assets/css/swiper-bundle.min.css';
 
 function Video() {
     return (
-        <div>
-            <div class="hero-layout2 hero-video">
-                <div class="hero-bg-video">
-                    <div id="herovideo" class="player"
-                        data-property="{videoURL:'TzfnlPxCZv0',containment:'.hero-video', showControls:false, autoPlay:true, loop:true, vol:0, mute:false, startAt:0,  stopAt:296, opacity:1, addRaster:true, quality:'large', optimizeDisplay:true}">
-                    </div>
-                </div>
+        <div className="hero-layout2 hero-video" style={{ position: 'relative', overflow: 'hidden' }}>
+            {/* Фоновое видео */}
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    zIndex: -1
+                }}
+            >
+                <source src={video} type="video/mp4" />
+                Ваш браузер не поддерживает видео.
+            </video>
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="hero-layout2-box">
-                                <div class="section-title">
-                                    <h3 class="wow fadeInUp">Добро пожаловать в Enerji Project</h3>
-                                    <h1 class="text-anime">Enerji <span>Project</span></h1>
-                                </div>
+            {/* Контент */}
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-12">
+                        <div className="hero-layout2-box">
+                            <div className="section-title">
+                                <h1 className="text-anime">Enerji Project</h1>
+                                <h3 className="wow fadeInUp">Добро пожаловать в Enerji Project</h3>
+                            </div>
 
-                                <div class="hero-content wow fadeInUp" data-wow-delay="0.25s">
-                                    <p>Установка солнечного освещения и солнечных панелей "под ключ",
-                                        Профессиональная мойка
-                                        солнечных панелей,
-                                        Установка дизельных генераторов.</p>
-                                </div>
-
-                                <div class="hero-button wow fadeInUp" data-wow-delay="0.5s">
-                                    <a href="./services.html" class="btn-default">Наши услуги</a>
-                                    <a href="https://t.me/Enerjiprojectadmin" class="btn-default btn-border">Свяжитесь
-                                        сейчас</a>
-                                </div>
+                            <div className="hero-content wow fadeInUp" data-wow-delay="0.25s">
+                                <p>
+                                    "Удобства и Безопасность и Эффективность все одном месте"
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
+
 export default Video;

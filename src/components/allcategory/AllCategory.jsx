@@ -22,7 +22,7 @@ const LaptopList = () => {
 
     return (
         <div>
-            <div class="page-header parallaxie">
+            {/* <div class="page-header parallaxie">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -33,8 +33,8 @@ const LaptopList = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <h1 className="gfdgd">Каталог товаров в Ташкенте</h1>
+            </div> */}
+            <h1 className="gfdgd">Популарные категория</h1>
             <div className="laptop-grid">
                 {laptops.map((laptop) => (
                     <a

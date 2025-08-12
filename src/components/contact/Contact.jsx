@@ -24,6 +24,8 @@ import follow1 from '../assets/img/logo1/icon-follow.svg'
 
 import telegram from '../assets/img/icon/telegram.png'
 import instagram from '../assets/img/icon/instagram.png'
+import ContactForm from '../сontact-form/ContactForm';
+import Iframe from '../iframe/Iframe'
 
 function Contact() {
     return (
@@ -135,15 +137,10 @@ function Contact() {
                     </div>
                 </div>
             </div>
-
             <div class="google-map-form">
                 <div class="google-map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d6001.262471722486!2d69.154235!3d41.229806!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDEzJzQ3LjMiTiA2OcKwMDknMTUuMyJF!5e0!3m2!1suz!2s!4v1754389360723!5m2!1suz!2s"
-                        width="600" height="450" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <Iframe />
                 </div>
-
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 offset-lg-6">
@@ -154,41 +151,7 @@ function Contact() {
                                 </div>
 
                                 <div class="contact-form wow fadeInUp" data-wow-delay="0.75s">
-                                    <form class="form" onsubmit="sendEmailTelegram(event)">
-                                        <div class="row">
-                                            <div class="form-group col-md-6 mb-4">
-                                                <input type="text" name="name" autocomplete="off" maxlength="50" required
-                                                    placeholder="Имя" class="form-control" />
-                                            </div>
-
-                                            <div class="form-group col-md-6 mb-4">
-                                                <input type="text" name="pass" id="name" autocomplete="off" maxlength="50"
-                                                    required placeholder="Фамилия" class="form-control" />
-                                            </div>
-
-                                            <div class="form-group col-md-6 mb-4">
-                                                <input type="text" name="pawwaa" id="name" autocomplete="off" maxlength="50"
-                                                    required placeholder="Ваши вопросы" class="form-control" />
-                                            </div>
-
-                                            <div class="form-group col-md-6 mb-4">
-                                                <input type="tel" name="phone" id="phone" autocomplete="off" maxlength="15"
-                                                    required placeholder="Номер телефона" class="form-control" />
-                                            </div>
-
-                                            <div class="col-lg-12">
-                                                <div class="form-inner">
-                                                    <div class="form__submit-block">
-                                                        <div class="form__submit-button">
-                                                            <button type="submit"
-                                                                class="btn-default disabled">Отправлять</button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form__send-result"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    <ContactForm />
                                 </div>
                             </div>
                         </div>
