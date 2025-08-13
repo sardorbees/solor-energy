@@ -42,6 +42,7 @@ import HzSolar from './components/hz-solar/HzSolar';
 import Invt from './components/invt/Invt';
 import Videoss from './components/video_ss/Videoss'
 import Comment from './components/comment/Comment';
+import ChangePassword from './components/change-password/ChangePassword';
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/video-type" element={<Videoss />} />
           <Route path="/comment" element={<Comment />} />
+          <Route path="/change-password" element={<ChangePassword />} />
           <Route
             path="/profile"
             element={

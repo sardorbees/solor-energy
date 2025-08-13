@@ -142,7 +142,7 @@ function ContactForm() {
                                             <input
                                                 type="tel"
                                                 name="phone"
-                                                placeholder="Телефон"
+                                                placeholder="Фамилия"
                                                 value={formData.phone}
                                                 onChange={handleChange}
                                                 className="form-control"

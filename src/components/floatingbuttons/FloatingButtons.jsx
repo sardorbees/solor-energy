@@ -9,7 +9,7 @@ const FloatingButtons = () => {
         <div style={styles.container}>
             {/* Кнопки меню */}
             <div style={{ ...styles.menu, transform: open ? "translateY(0)" : "translateY(20px)", opacity: open ? 1 : 0 }}>
-                <a href="tel:++998951481212" style={{ ...styles.button, backgroundColor: "#FF3338" }}>
+                <a href="https://www.instagram.com/solarenerjiproject?igsh=bmozcmUxNGMyMHRp" style={{ ...styles.button, backgroundColor: "#FF3338" }}>
                     <FaInstagram style={styles.icon} />
                 </a>
             </div>
