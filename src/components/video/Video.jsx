@@ -38,7 +38,7 @@ function Video() {
                         <div className="hero-layout2-box">
                             <div className="section-title">
                                 <h1 className="text-anime">Enerji Project</h1>
-                                <h3 className="wow fadeInUp">Добро пожаловать в Enerji Project</h3>
+                                <h3 className="wow fadeInUp">Consulting Engineering Enerji Project</h3>
                             </div>
 
                             <div className="hero-content wow fadeInUp" data-wow-delay="0.25s">

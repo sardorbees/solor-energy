@@ -42,7 +42,7 @@ function Burger() {
                         <hr />
                         <li class="nav-item"><a class="nav-link" href="/contact">Связь с Нами</a></li>
                         <hr />
-                        <li class="nav-item"><a class="nav-link" href="/contact">Наш Видео</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/video-type">Наш Видео</a></li>
                         <hr />
                         <li class="nav-item"><a class="nav-link" href="/comment">Комментария</a></li>
                         <hr />
